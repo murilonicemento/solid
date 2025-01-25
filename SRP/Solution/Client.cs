@@ -10,6 +10,6 @@ public class Client
 
   public bool Validar()
   {
-    return Email.Validar() && Cpf.Validar();
+    return Email.Validate() && Cpf.Validate();
   }
 }
