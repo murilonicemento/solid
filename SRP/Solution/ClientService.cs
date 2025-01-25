@@ -1,16 +1,16 @@
 namespace SOLID.SRP.Solution
 {
-  public class ClienteService
+  public class ClientService
   {
-    public string AdicionarCliente(Client cliente)
+    public string AddClient(Client client)
     {
-      if (!cliente.Validar())
+      if (!client.Validar())
         return "Dados inválidos";
 
-      var repo = new ClienteRepository();
-      repo.AdicionarCliente(cliente);
+      var repo = new ClientRepository();
+      repo.AddClient(client);
 
-      EmailService.Enviar("empresa@empresa.com", cliente.Email.Endereco, "Bem Vindo", "Parabéns está Cadastrado");
+      EmailService.Send("empresa@empresa.com", client.Email.Endereco, "Bem Vindo", "Parabéns está Cadastrado");
 
       return "Cliente cadastrado com sucesso";
     }

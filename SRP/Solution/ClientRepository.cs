@@ -2,9 +2,9 @@ using System.Data;
 
 namespace SOLID.SRP.Solution
 {
-  public class ClienteRepository
+  public class ClientRepository
   {
-    public void AdicionarCliente(Client cliente)
+    public void AddClient(Client client)
     {
       using (var cn = new SqlConnection())
       {
@@ -15,10 +15,10 @@ namespace SOLID.SRP.Solution
         cmd.CommandType = CommandType.Text;
         cmd.CommandText = "INSERT INTO CLIENTE (NOME, EMAIL CPF, DATACADASTRO) VALUES (@nome, @email, @cpf, @dataCad))";
 
-        cmd.Parameters.AddWithValue("nome", cliente.Nome);
-        cmd.Parameters.AddWithValue("email", cliente.Email);
-        cmd.Parameters.AddWithValue("cpf", cliente.Cpf);
-        cmd.Parameters.AddWithValue("dataCad", cliente.DataCadastro);
+        cmd.Parameters.AddWithValue("nome", client.Nome);
+        cmd.Parameters.AddWithValue("email", client.Email);
+        cmd.Parameters.AddWithValue("cpf", client.Cpf);
+        cmd.Parameters.AddWithValue("dataCad", client.DataCadastro);
 
         cn.Open();
         cmd.ExecuteNonQuery();
