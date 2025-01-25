@@ -8,7 +8,7 @@ public class Client
   public CPF Cpf { get; set; }
   public DateTime DataCadastro { get; set; }
 
-  public bool Validar()
+  public bool Validate()
   {
     return Email.Validate() && Cpf.Validate();
   }
